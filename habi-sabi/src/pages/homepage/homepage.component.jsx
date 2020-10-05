@@ -1,13 +1,11 @@
 import React from "react";
 import "./homepage.styles.scss";
-//import picture from "../../images/homepageImage.jpg";
 
-const HomePage = () => (
-  <div
-    className="image"
-    style={{
-      backgroundImage: `url(https://github.com/TeresaRosinski/HabiSabi/blob/main/habi-sabi/src/images/homepageImage.jpg)`,
-    }}
-  ></div>
-);
+function HomePage() {
+  return (
+    <div className="hero-container">
+      <div className="hero-btns"></div>
+    </div>
+  );
+}
 export default HomePage;

@@ -3,8 +3,11 @@ import "./homepage.styles.scss";
 
 function HomePage() {
   return (
-    <div className="hero-container">
-      <div className="hero-btns"></div>
+    <div className="hero-container .container-fluid">
+      <div className="hero-text">
+        <h1>Welcome</h1>
+        <button>GET STARTED</button>
+      </div>
     </div>
   );
 }

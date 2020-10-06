@@ -4,7 +4,11 @@ import React from "react";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 
-import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
+import {
+  auth,
+  signInWithGoogle,
+  createUserProfileDocument,
+} from "../../firebase/firebase.utils";
 
 class SignUp extends React.Component {
   constructor() {
@@ -21,8 +25,8 @@ class SignUp extends React.Component {
   handleSubmit = async (event) => {
     event.preventDefault();
 
-    const { dispalyName, email, password, confirmPassword } = this.state;
-    if (password != confirmPassword) {
+    const { displayName, email, password, confirmPassword } = this.state;
+    if (password !== confirmPassword) {
       alert("passwords don't match");
       return;
     }
@@ -50,11 +54,11 @@ class SignUp extends React.Component {
   };
 
   render() {
-    const { dispalyName, email, password, confirmPassword } = this.state;
+    const { displayName, email, password, confirmPassword } = this.state;
     return (
       <div className="signUp">
         <h2 className="title">
-          I do not have an account
+          Create Account
           <span>Sign Up with Email and Password</span>
         </h2>
         <form className="sign-up-form" onSubmit={this.handleSubmit}>
@@ -90,7 +94,12 @@ class SignUp extends React.Component {
             label="Confirm Password"
             required
           ></FormInput>
-          <CustomButton type="submit">SIGN UP</CustomButton>
+          <div className="buttons">
+            <CustomButton type="submit">Sign Up </CustomButton>
+            <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+              Sign Up With Google
+            </CustomButton>
+          </div>
         </form>
       </div>
     );

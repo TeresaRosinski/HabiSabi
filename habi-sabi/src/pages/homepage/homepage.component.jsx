@@ -4,7 +4,7 @@ import HomePageButton from "../../components/homepage-button/homepage-button.com
 
 function HomePage() {
   return (
-    <div className="hero-container .container-fluid">
+    <div className="hero-container contain-fluid">
       <div className="hero-text">
         <h1>Welcome</h1>
         <HomePageButton>GET STARTED</HomePageButton>

@@ -1,0 +1,10 @@
+body {
+  font-family: 'Noto Serif JP';
+  padding: 20px 60px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-family: 'Poppins';
+}

@@ -7,6 +7,8 @@ import AboutPage from "./pages/aboutpage/aboutpage.component";
 import { Switch, Route } from "react-router-dom";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+import HabitScorecard from "./pages/scorecard/scorecard.component";
+import ScoreCard from "./pages/scorecard/scorecard.component";
 
 class App extends React.Component {
   constructor() {
@@ -54,6 +56,7 @@ class App extends React.Component {
           <Route path="/tools" component={ToolsPage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/signin" component={SignInAndSignUpPage} />
+          <Route path="/scorecard" component={ScoreCard} />
         </Switch>
       </div>
     );

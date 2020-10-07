@@ -1,5 +1,6 @@
 import React from "react";
 import "./habit-list.styles.scss";
+import "../../firebase/firebase.utils";
 import AddHabit from "../add-habit/add-habit.component";
 
 class HabitList extends React.Component {
@@ -11,6 +12,7 @@ class HabitList extends React.Component {
     };
   }
 
+  /*
   tableBody = () => (
     <tbody>
       {this.state.map((habit) => (
@@ -21,7 +23,7 @@ class HabitList extends React.Component {
       ))}
     </tbody>
   );
-
+*/
   render() {
     const { habitName, habitRating } = this.state;
     return (
@@ -32,7 +34,6 @@ class HabitList extends React.Component {
             <th scope="col">Rating</th>
           </tr>
         </thead>
-        {tableBody}
       </div>
     );
   }

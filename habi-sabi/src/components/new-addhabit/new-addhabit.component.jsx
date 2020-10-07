@@ -2,6 +2,7 @@ import React, { useEffect, useState, Fragment } from "react";
 import firebase from "../../firebase/firebase.utils";
 import "../../firebase/firebase.utils";
 import { v4 as uuidv4 } from "uuid";
+import "./new-addhabit.styles.scss";
 
 function AddNewHabit() {
   const [habits, setHabits] = useState([]);
@@ -73,11 +74,25 @@ function AddNewHabit() {
   return (
     <Fragment>
       <h1>Habits</h1>
-      <div className="inputBox">
-        <h2>Add New Habit</h2>
-        <input type="text" onChange={(e) => setName(e.target.value)} />
-        <input onChange={(e) => setRating(e.target.value)} />
-        <button onClick={() => addHabit({ name, rating, id: uuidv4() })}>
+      <h2>Add New Habit</h2>
+      <div className="group">
+        <br></br>
+        <label>Habit Name</label>
+        <input
+          className="habitform-input"
+          type="text"
+          name="habit"
+          onChange={(e) => setName(e.target.value)}
+        />
+        <label>Habit Rating</label>
+        <input
+          className="habitform-input"
+          onChange={(e) => setRating(e.target.value)}
+        />
+        <button
+          className="habit-submit-button"
+          onClick={() => addHabit({ name, rating, id: uuidv4() })}
+        >
           Submit
         </button>
       </div>
@@ -91,7 +106,6 @@ function AddNewHabit() {
           <div>
             <button onClick={() => deleteHabit(habit)}> Delete </button>
             <button onClick={() => editHabit({ name, rating, id: habit.id })}>
-              {" "}
               Edit
             </button>
           </div>

@@ -10,7 +10,6 @@ import ToolsDirectory from "../../components/tools-directory/tools-directory.com
 
 const ScoreCard = ({ currentUser }) => (
   <div>
-    {console.log(currentUser)}
     <div>
       {currentUser ? (
         <div>

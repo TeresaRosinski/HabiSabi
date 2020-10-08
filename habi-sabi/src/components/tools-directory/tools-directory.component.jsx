@@ -2,6 +2,9 @@ import React from "react";
 import ToolItem from "../tool-item/tool-item.component";
 import "./tools-directory.styles.scss";
 
+import yoga from "./yoga.svg";
+import desk from "./desk.svg";
+import game from "./game.svg";
 class ToolsDirectory extends React.Component {
   constructor() {
     super();
@@ -10,22 +13,23 @@ class ToolsDirectory extends React.Component {
       sections: [
         {
           title: "Habit Scorecard",
-          imageUrl: "https://i.ibb.co/cvpntL1/hats.png",
+          imageUrl: desk,
           id: 1,
           linkUrl: "scorecard",
         },
         {
           title: "Wellness Tracker",
-          imageUrl:
-            "https://github.com/TeresaRosinski/HabiSabi/blob/main/habi-sabi/src/components/tools-directory/yoga.svg",
+          imageUrl: yoga,
           id: 2,
-          linkUrl: "shop/jackets",
+          linkUrl: "underConstruction",
+          production: "Being Built",
         },
         {
           title: "Experiment",
-          imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
+          imageUrl: game,
           id: 3,
-          linkUrl: "shop/sneakers",
+          linkUrl: "underConstruction",
+          production: "Being Built",
         },
       ],
     };

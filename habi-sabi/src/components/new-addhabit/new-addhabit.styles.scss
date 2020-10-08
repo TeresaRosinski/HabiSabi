@@ -10,6 +10,8 @@ $main-color: black;
 .group {
   margin-left: 5%;
 
+  padding-bottom: 10px;
+
   .habitform-input {
     background: none;
     background-color: white;
@@ -63,4 +65,15 @@ $main-color: black;
 
 .scorecard-heading {
   margin-left: 5%;
+}
+
+.scorecard-image {
+
+  background-image: url("./skate.svg");
+  width: auto;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+
+
 }

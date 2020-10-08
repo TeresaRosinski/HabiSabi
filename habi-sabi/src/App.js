@@ -8,6 +8,7 @@ import { Switch, Route } from "react-router-dom";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import ScoreCard from "./pages/scorecard/scorecard.component";
+import UnderConstruction from "./pages/underconstruction.component";
 
 class App extends React.Component {
   constructor() {
@@ -59,6 +60,7 @@ class App extends React.Component {
             path="/toolsscorecard"
             render={() => <ScoreCard currentUser={this.state.currentUser} />}
           />
+          <Route path="/toolsunderconstruction" component={UnderConstruction} />
         </Switch>
       </div>
     );

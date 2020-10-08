@@ -3,6 +3,7 @@ import firebase from "../../firebase/firebase.utils";
 import "../../firebase/firebase.utils";
 import { v4 as uuidv4 } from "uuid";
 import "./new-addhabit.styles.scss";
+import skate from "./skate.svg";
 
 function AddNewHabit(props) {
   const [habits, setHabits] = useState([]);
@@ -79,40 +80,44 @@ function AddNewHabit(props) {
     <Fragment className="container">
       <div className="scorecard-heading">
         <h1>Habit Scorecard</h1>
-        <p>Add current habits here.</p>
+        <p>Log All Current Habits Here</p>
+        <p>Identify Each Habity as Being Positive, Negative or Neutral</p>
       </div>
       <div>
-        <div className="row group">
-          <div className="col-4">
-            <label>Habit Name</label>
-            <input
-              className="habitform-input"
-              type="text"
-              name="habit"
-              onChange={(e) => setName(e.target.value)}
-            />
-          </div>
-          <div className="col-4">
-            <label>Habit Rating</label>
-            <input
-              className="habitform-input"
-              onChange={(e) => setRating(e.target.value)}
-            />
-          </div>
-          <div className="col-4">
-            <button
-              className="habit-submit-button"
-              onClick={() =>
-                addHabit({
-                  name,
-                  rating,
-                  id: uuidv4(),
-                  userId: props.currentUser.id,
-                })
-              }
-            >
-              Submit
-            </button>
+        <div className="group ">
+          <div className="row align-items-center">
+            <div className="col-4">
+              <label>Habit Name</label>
+              <input
+                className="habitform-input"
+                type="text"
+                name="habit"
+                onChange={(e) => setName(e.target.value)}
+              />
+              <br />
+              <label>Habit Effect</label>
+              <input
+                className="habitform-input"
+                onChange={(e) => setRating(e.target.value)}
+              />
+              <button
+                className="habit-submit-button"
+                onClick={() =>
+                  addHabit({
+                    name,
+                    rating,
+                    id: uuidv4(),
+                    userId: props.currentUser.id,
+                  })
+                }
+              >
+                Submit
+              </button>
+            </div>
+
+            <div className="col-8">
+              <img src={skate} alt="man on peddle pusher" />
+            </div>
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@ import "firebase/auth";
 import SignIn from "../../components/sign-in/sign-in.component";
 import AddNewHabit from "../../components/new-addhabit/new-addhabit.component";
 import ToolsDirectory from "../../components/tools-directory/tools-directory.component";
+import SignInAndSignUpPage from "../sign-in-and-sign-up/sign-in-and-sign-up";
 
 const ScoreCard = ({ currentUser }) => (
   <div>
@@ -16,7 +17,9 @@ const ScoreCard = ({ currentUser }) => (
           <AddNewHabit currentUser={currentUser} />
         </div>
       ) : (
-        <div>To Create a Habit Score Card please Sign In.</div>
+        <div>
+          <SignInAndSignUpPage />
+        </div>
       )}
     </div>
   </div>

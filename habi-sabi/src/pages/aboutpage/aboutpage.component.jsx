@@ -30,6 +30,9 @@ const AboutPage = () => (
           <p>
             <em>by Charles Duhigg</em>
           </p>
+          <p>
+            <em>"There's nothing you can't do if you get the habits right"</em>
+          </p>
         </div>
         <div className="col-4 book">
           <h4>
@@ -38,6 +41,12 @@ const AboutPage = () => (
           <p>
             <em>by James Clearwater</em>
           </p>
+          <p>
+            <em>
+              "Habits are not a finish line to be crossed, they are a lifestyle
+              to be lived."
+            </em>
+          </p>
         </div>
         <div className="col-4 book">
           <h4>
@@ -45,6 +54,13 @@ const AboutPage = () => (
           </h4>
           <p>
             <em>by Norman Doidge</em>
+          </p>
+          <p>
+            <em>
+              {" "}
+              “Ironically, some of our most stubborn habits and disorders are
+              products of our plasticity.”
+            </em>
           </p>
         </div>
       </div>

@@ -19,7 +19,6 @@ function AddNewHabit(props) {
       const items = [];
       querySnapshot.forEach((doc) => {
         const habitData = doc.data();
-        console.log("user", props.currentUser.uid);
         if (habitData.userId === props.currentUser.uid) {
           items.push(doc.data());
         }
@@ -44,7 +43,6 @@ function AddNewHabit(props) {
   }, []);
   //ADD Functionality
   function addHabit(newHabit) {
-    console.log("newhabit", newHabit);
     ref
       .doc(newHabit.id)
       .set(newHabit)
@@ -120,7 +118,6 @@ function AddNewHabit(props) {
       </div>
 
       {loading ? <h1>Loading....</h1> : null}
-      {console.log(habits)}
       <table className="table habitTable">
         <thead>
           <tr>

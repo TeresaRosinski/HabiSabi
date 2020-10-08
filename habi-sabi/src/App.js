@@ -56,7 +56,7 @@ class App extends React.Component {
           <Route path="/about" component={AboutPage} />
           <Route path="/signin" component={SignInAndSignUpPage} />
           <Route
-            path="/scorecard"
+            path="/toolsscorecard"
             render={() => <ScoreCard currentUser={this.state.currentUser} />}
           />
         </Switch>

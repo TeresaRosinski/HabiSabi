@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./toolspage.styles.scss";
+import ToolsDirectory from "../../components/tools-directory/tools-directory.component";
 
 const ToolsPage = () => (
   <div className="container-fluid top-tools">
@@ -10,9 +11,9 @@ const ToolsPage = () => (
       </div>
     </div>
     <div>
-      <Link to="/scorecard">
-        <h1>Habit Scorecard</h1>
-      </Link>
+      <div className="homepage">
+        <ToolsDirectory />
+      </div>
     </div>
   </div>
 );

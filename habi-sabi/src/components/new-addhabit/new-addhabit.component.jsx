@@ -4,22 +4,27 @@ import "../../firebase/firebase.utils";
 import { v4 as uuidv4 } from "uuid";
 import "./new-addhabit.styles.scss";
 
-function AddNewHabit() {
+function AddNewHabit(props) {
   const [habits, setHabits] = useState([]);
   const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
   const [rating, setRating] = useState("");
 
   const ref = firebase.firestore().collection("habits");
-  console.log("ref" + " " + ref.name);
 
   function getHabits() {
     setLoading(true);
+
     ref.onSnapshot((querySnapshot) => {
       const items = [];
       querySnapshot.forEach((doc) => {
-        items.push(doc.data());
+        const habitData = doc.data();
+        console.log("user", props.currentUser.uid);
+        if (habitData.userId === props.currentUser.uid) {
+          items.push(doc.data());
+        }
       });
+
       setHabits(items);
       setLoading(false);
     });
@@ -39,6 +44,7 @@ function AddNewHabit() {
   }, []);
   //ADD Functionality
   function addHabit(newHabit) {
+    console.log("newhabit", newHabit);
     ref
       .doc(newHabit.id)
       .set(newHabit)
@@ -72,45 +78,71 @@ function AddNewHabit() {
   }
 
   return (
-    <Fragment>
-      <h1>Habits</h1>
-      <h2>Add New Habit</h2>
-      <div className="group">
-        <br></br>
-        <label>Habit Name</label>
-        <input
-          className="habitform-input"
-          type="text"
-          name="habit"
-          onChange={(e) => setName(e.target.value)}
-        />
-        <label>Habit Rating</label>
-        <input
-          className="habitform-input"
-          onChange={(e) => setRating(e.target.value)}
-        />
-        <button
-          className="habit-submit-button"
-          onClick={() => addHabit({ name, rating, id: uuidv4() })}
-        >
-          Submit
-        </button>
+    <Fragment className="container">
+      <div className="scorecard-heading">
+        <h1>Habit Scorecard</h1>
+        <p>Add current habits here.</p>
       </div>
-      <hr />
-      {loading ? <h1>Loading....</h1> : null}
-      {console.log(habits)}
-      {habits.map((habit) => (
-        <div className="habit" key={habit.id}>
-          <h2>{habit.name}</h2>
-          <h2>{habit.rating}</h2>
-          <div>
-            <button onClick={() => deleteHabit(habit)}> Delete </button>
-            <button onClick={() => editHabit({ name, rating, id: habit.id })}>
-              Edit
+      <div>
+        <div className="row group">
+          <div className="col-4">
+            <label>Habit Name</label>
+            <input
+              className="habitform-input"
+              type="text"
+              name="habit"
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+          <div className="col-4">
+            <label>Habit Rating</label>
+            <input
+              className="habitform-input"
+              onChange={(e) => setRating(e.target.value)}
+            />
+          </div>
+          <div className="col-4">
+            <button
+              className="habit-submit-button"
+              onClick={() =>
+                addHabit({
+                  name,
+                  rating,
+                  id: uuidv4(),
+                  userId: props.currentUser.id,
+                })
+              }
+            >
+              Submit
             </button>
           </div>
         </div>
-      ))}
+      </div>
+
+      {loading ? <h1>Loading....</h1> : null}
+      {console.log(habits)}
+      <table className="table habitTable">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+
+        {habits.map((habit) => (
+          <tbody>
+            <th key={habit.id}>{habit.name}</th>
+            <th>{habit.rating}</th>
+            <th>
+              <button className="delete" onClick={() => deleteHabit(habit)}>
+                {" "}
+                Delete{" "}
+              </button>
+            </th>
+          </tbody>
+        ))}
+      </table>
     </Fragment>
   );
 }

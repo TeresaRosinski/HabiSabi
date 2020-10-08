@@ -8,6 +8,8 @@ import "firebase/firestore";
 import "firebase/auth";
 import SignIn from "../../components/sign-in/sign-in.component";
 import AddNewHabit from "../../components/new-addhabit/new-addhabit.component";
+import Card from "../../components/toolspreview/toolspreview.component";
+import ToolsDirectory from "../../components/tools-directory/tools-directory.component";
 
 const ScoreCard = ({ currentUser }) => (
   <div>
@@ -15,17 +17,12 @@ const ScoreCard = ({ currentUser }) => (
     <div>
       {currentUser ? (
         <div>
-          {currentUser.id} You are signed in{" "}
           <AddNewHabit currentUser={currentUser} />
         </div>
       ) : (
         <div>To Create a Habit Score Card please Sign In.</div>
       )}
     </div>
-    <section>
-      <ul id="habitList"></ul>
-      <button id="addHabit">Add</button>
-    </section>
   </div>
 );
 export default ScoreCard;

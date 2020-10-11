@@ -1,6 +1,0 @@
-blue: #36454f
-blue: 4e9ccc
-light purple/pink: F8CCE5
-dark purple: BD7db9
-
-font: poppins

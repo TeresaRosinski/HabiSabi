@@ -1,5 +1,4 @@
-<h1 align="center"><strong>Habi-Sabi</strong></h1>
-<a><h2 align="center"><em>habi-sabi.herokuapp.com</em></h2></a>
+# [Habi-Sabi](habi-sabi.herokuapp.com)
 
 <img align = "center">
 
@@ -51,7 +50,7 @@
 
 ## Setup/Installation Requirements
 
-#### To quickly see the functionlaity of this project visit: habi-sabi.herokuapp.com
+#### To quickly see the functionlaity of this project visit: [Habi-Sabi](habi-sabi.herokuapp.com)
 
 #### Clone the GitHub repository by running git clone https://github.com/TeresaRosinski/habi-sabi in the terminal.Or download the ZIP file by clicking on Code then Download ZIP from this repository.
 

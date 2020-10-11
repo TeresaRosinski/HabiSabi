@@ -1,4 +1,4 @@
-# [Habi-Sabi](habi-sabi.herokuapp.com)
+<h1 align="center"><strong>Habi-Sabi</strong></h1>
 
 <img align = "center">
 

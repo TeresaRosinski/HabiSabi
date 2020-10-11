@@ -1,5 +1,5 @@
 <h1 align="center"><strong>Habi-Sabi</strong></h1>
-<h2 align="center"><em>habi-sabi.herokuapp.com</em></h2>
+<a><h2 align="center"><em>habi-sabi.herokuapp.com</em></h2></a>
 
 <img align = "center">
 

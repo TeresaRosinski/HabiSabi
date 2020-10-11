@@ -13,7 +13,7 @@
 
 ---
 
-<h2 align="center"><strong>Created By: Teresa Rosinski</strong></h2>
+<h4 align="center"><strong>Created By: Teresa Rosinski</strong></h>
 
 [<img src = "https://avatars2.githubusercontent.com/u/64601502?s=460&u=6e3ec9021f0e9990fa27ea14f27118ec463836e8&v=4" width=100 alt="GitHub avatar for author TeresaRosinski">](https://github.com/TeresaRosinski)  
 [**TeresaRosinski**](https://github.com/TeresaRosinski)

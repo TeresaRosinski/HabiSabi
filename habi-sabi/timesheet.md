@@ -3,7 +3,7 @@ All of these times are in CST
 Friday Sept.25: Accounted for in commits of previous project turned in.
 
 Friday Oct. 2nd:
-10 - 11: Studying React using Udemy course listed below
+10 - 11: Studying React using Udemy course
 11-12: Studying React using Udemy
 12-1: Studying React using Udemy
 1-2: Studying React using Udemy
